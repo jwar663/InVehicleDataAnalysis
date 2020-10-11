@@ -32,3 +32,8 @@ t.test(DRIVING_ERRORS ~ DASHBOARD_GESTURE, data=driving.data, paired=TRUE)
 #t-test reaction time
 t.test(INTERACTION_ERRORS ~ DASHBOARD_GESTURE, data=driving.data, paired=TRUE)
 #t.test(INTERACTION_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
+
+#display box plots for each different variable
+boxplot(REACTION_TIME ~ DASHBOARD_GESTURE, data=driving.data)
+boxplot(DRIVING_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
+boxplot(INTERACTION_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
