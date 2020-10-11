@@ -1,9 +1,9 @@
 # InVehicleDataAnalysis
 
-###Purpose
+### Purpose
 To compare and analyse the variables and results of the in-vehicle driving simulation dashboard/gesture experiment
 
-###Run
+### Run
 * Download [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/products/rstudio/download/) for your preferred operating system
 * Clone the repository onto your local device
 * Access and identify the location of the dataset extracted from the driving simulator
@@ -12,7 +12,7 @@ To compare and analyse the variables and results of the in-vehicle driving simul
 * Each time you open R, load the libraries again
 * Run the relevant segments of code, depending on the information/analysis you require
 
-###Driving simulator data set
+### Driving simulator data set
 * The driving simulator should return a csv file with columns: ID, DASHBOARD_FIRST, DASHBOARD_GESTURE, REACTION_TIME, DRIVING_ERRORS, INTERACTION_ERRORS
 * ID - Unique identifier of the participant
 * DASHBOARD_FIRST - TRUE if the participant completed the dashboard experiment first, FALSE otherwise
