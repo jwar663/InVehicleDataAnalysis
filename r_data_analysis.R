@@ -54,10 +54,19 @@ summary(one.way.reaction.time)
 summary(one.way.driving.errors)
 summary(one.way.interaction.errors)
 
-#two way ANOVA for each variable not considering the impact of completing dashboard first or gesture first
+#two way ANOVA for each variable now considering the impact of completing dashboard first or gesture first
 two.way.reaction.time <- aov(REACTION_TIME ~ DASHBOARD_GESTURE + DASHBOARD_FIRST, data=driving.data)
 two.way.driving.errors <- aov(DRIVING_ERRORS ~ DASHBOARD_GESTURE + DASHBOARD_FIRST, data=driving.data)
 two.way.interaction.errors <- aov(INTERACTION_ERRORS ~ DASHBOARD_GESTURE + DASHBOARD_FIRST, data=driving.data)
 summary(two.way.reaction.time)
 summary(two.way.driving.errors)
 summary(two.way.interaction.errors)
+
+#two way ANOVA for each variable now considering the interaction between the two independent variables
+#low sum-of-squares and high p-value means not much variation because of interaction
+interaction.reaction.time <- aov(REACTION_TIME ~ DASHBOARD_GESTURE * DASHBOARD_FIRST, data=driving.data)
+interaction.driving.errors <- aov(DRIVING_ERRORS ~ DASHBOARD_GESTURE * DASHBOARD_FIRST, data=driving.data)
+interaction.interaction.errors <- aov(INTERACTION_ERRORS ~ DASHBOARD_GESTURE * DASHBOARD_FIRST, data=driving.data)
+summary(interaction.reaction.time)
+summary(interaction.driving.errors)
+summary(interaction.interaction.errors)
