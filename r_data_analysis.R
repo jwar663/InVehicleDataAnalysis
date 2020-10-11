@@ -9,7 +9,8 @@
 
 #Import data set from driving simulator
 #change file path to the absolute path on your machine ('\\' in all occurrences of '\')
-file_path <- "D:\\Documents\\University\\SE702\\Data_Analysis\\final_dataset.csv" 
+file_path <- "D:\\Documents\\University\\SE702\\Data_Analysis\\final_dataset.csv"
+#data should be in form: ID, DASHBOARD_FIRST, DASHBOARD_GESTURE, REACTION_TIME, DRIVING_ERRORS, INTERACTION_ERRORS
 driving.data <- read.csv(file_path, header=TRUE, colClasses=c("factor", "factor", "factor", "numeric", "numeric", "numeric"))
 
 #summary of driving data set
@@ -37,3 +38,8 @@ t.test(INTERACTION_ERRORS ~ DASHBOARD_GESTURE, data=driving.data, paired=TRUE)
 boxplot(REACTION_TIME ~ DASHBOARD_GESTURE, data=driving.data)
 boxplot(DRIVING_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
 boxplot(INTERACTION_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
+
+#display histograms of each different variable to check if data is normally distributed
+hist(driving.data$REACTION_TIME)
+hist(driving.data$DRIVING_ERRORS)
+hist(driving.data$INTERACTION_ERRORS)
