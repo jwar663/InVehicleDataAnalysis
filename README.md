@@ -6,10 +6,11 @@ To compare and analyse the variables and results of the in-vehicle driving simul
 ### Run
 * Download [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/products/rstudio/download/) for your preferred operating system
 * Clone the repository onto your local device
-* Access and identify the location of the dataset extracted from the driving simulator
+* Open r_data_analysis.R with RStudio
+* Access and identify the location of the dataset extracted from the driving simulator, add this absolute path to the file_path variable 
 * In RStudio, highlight the segment of code you want to execute and use CTRL+ENTER
 * Install packages the first time you run the code
-* Each time you open R, load the libraries again
+* Each time you open RStudio, load the libraries again
 * Run the relevant segments of code, depending on the information/analysis you require
 
 ### Driving simulator data set
