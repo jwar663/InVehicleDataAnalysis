@@ -40,6 +40,15 @@ boxplot(DRIVING_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
 boxplot(INTERACTION_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
 
 #display histograms of each different variable to check if data is normally distributed
+#if not normally distributed, some processing may be required for data
 hist(driving.data$REACTION_TIME)
 hist(driving.data$DRIVING_ERRORS)
 hist(driving.data$INTERACTION_ERRORS)
+
+#one way ANOVA for each variable
+one.way.reaction.time <- aov(REACTION_TIME ~ DASHBOARD_GESTURE, data=driving.data)
+one.way.driving.errors <- aov(DRIVING_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
+one.way.interaction.errors <- aov(INTERACTION_ERRORS ~ DASHBOARD_GESTURE, data=driving.data)
+summary(one.way.reaction.time)
+summary(one.way.driving.errors)
+summary(one.way.interaction.errors)
