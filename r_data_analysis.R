@@ -9,9 +9,13 @@
 
 #Import data set from driving simulator
 #change file path to the absolute path on your machine ('\\' in all occurrences of '\')
-file_path <- "D:\\Documents\\University\\SE702\\Data_Analysis\\final_dataset.csv"
+file_path <- "D:\\Documents\\University\\SE702\\Data_Analysis\\final_data.csv"
 #data should be in form: ID, TOUCH_FIRST, TOUCH_GESTURE_CONTROL, BRAKE_TIME_AVE, LANE_TIME_AVE, SUM_AVE
 driving.data <- read.csv(file_path, header=TRUE, colClasses=c("factor", "factor", "factor", "numeric", "numeric", "numeric"))
+
+#data should be in form: ID, TOUCH_FIRST, TOUCH_GESTURE, BRAKE_TIME_AVE, LANE_TIME_AVE, SUM_AVE
+file_path_t_test <- "D:\\Documents\\University\\SE702\\Data_Analysis\\t_test.csv"
+driving.data.ttest <- read.csv(file_path_t_test, header=TRUE, colClasses=c("factor", "factor", "factor", "numeric", "numeric", "numeric"))
 
 #summary of driving data set
 summary(driving.data)
@@ -20,16 +24,16 @@ summary(driving.data)
 #p-value should be < 0.05 to reject null hypothesis
 
 #t-test average brake time
-t.test(BRAKE_TIME_AVE ~ TOUCH_GESTURE_CONTROL, data=driving.data, paired=TRUE)
-#t.test(BRAKE_TIME_AVE ~ TOUCH_GESTURE_CONTROL, data=driving.data)
+t.test(BRAKE_TIME_AVE ~ TOUCH_GESTURE, data=driving.data.ttest, paired=TRUE)
+#t.test(BRAKE_TIME_AVE ~ TOUCH_GESTURE, data=driving.data.ttest)
 
 #t-test average lane change time
-t.test(LANE_TIME_AVE ~ TOUCH_GESTURE_CONTROL, data=driving.data, paired=TRUE)
-#t.test(LANE_TIME_AVE ~ TOUCH_GESTURE_CONTROL, data=driving.data)
+t.test(LANE_TIME_AVE ~ TOUCH_GESTURE, data=driving.data.ttest, paired=TRUE)
+#t.test(LANE_TIME_AVE ~ TOUCH_GESTURE, data=driving.data.ttest)
 
 #t-test summed average
-t.test(SUM_AVE ~ TOUCH_GESTURE_CONTROL, data=driving.data, paired=TRUE)
-#t.test(SUM_AVE ~ TOUCH_GESTURE_CONTROL, data=driving.data)
+t.test(SUM_AVE ~ TOUCH_GESTURE, data=driving.data.ttest, paired=TRUE)
+#t.test(SUM_AVE ~ TOUCH_GESTURE, data=driving.data.ttest)
 
 #display box plots for each different variable
 
